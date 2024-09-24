@@ -1,5 +1,7 @@
+import './style.css';
 import * as THREE from 'three';
 import gsap from "gsap";
+import Barnacle from './barnacle.jpg';
 
 //* groups, children, and gsap demo
 
@@ -17,7 +19,7 @@ const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHei
 camera.position.z = 100;
 
 const renderer = new THREE.WebGLRenderer();
-renderer.setSize( window.innerWidth, window.innerHeight );
+renderer.setSize( window.innerWidth/2, window.innerHeight/2 );
 document.body.appendChild(renderer.domElement);
 
 //* rendering a cube
