@@ -16,7 +16,7 @@ import Barnacle from './barnacle.jpg';
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1,1000);
-camera.position.z = 100;
+camera.position.z = 60;
 
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize( window.innerWidth/2, window.innerHeight/2 );
@@ -29,6 +29,14 @@ const geometry = new THREE.BoxGeometry(1,1,1);
 //a phong material will!
 const material = new THREE.MeshPhongMaterial({color:0x44aa88});
 
+const loader = new THREE.TextureLoader();
+const texture = loader.load( Barnacle );
+texture.colorSpace = THREE.SRGBColorSpace;
+
+const materialTexture = new THREE.MeshBasicMaterial({
+    map: texture,
+});
+
 //* lets try some primatives
 //* a cone
 const coneGeom = new THREE.ConeGeometry(6,8,16);
@@ -37,7 +45,7 @@ coneEx.position.z = -30;
 coneEx.position.x = -10;
 
 const coneGeom2 = new THREE.ConeGeometry(6,16,16);
-const coneEx2 = new THREE.Mesh(coneGeom2, material);
+const coneEx2 = new THREE.Mesh(coneGeom2, materialTexture);
 coneEx2.position.z = -30;
 coneEx2.position.x = 10;
 
