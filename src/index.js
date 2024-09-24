@@ -80,13 +80,13 @@ renderer.setAnimationLoop(animate);
 // Animate the x, y and z rotation of the object
 gsap.to(coneGroup.rotation, { duration: 2, x: 3});
 gsap.to(coneGroup.rotation, { duration: 2, y: 3, delay: 3});
-gsap.to(coneGroup.rotation, { duration: 2, z: 3, delay: 6});
+gsap.to(coneGroup.rotation, { duration: 2, z: 3, delay: 6, repeat: -1});
 
 //* lets animate the children of the group?
 gsap.to(coneGroup.children[0].rotation, { duration: 2, x: 3});
 gsap.to(coneGroup.children[0].rotation, { duration: 2, y: 3, delay: 3});
-gsap.to(coneGroup.children[0].rotation, { duration: 2, z: 3, delay: 6});
+gsap.to(coneGroup.children[0].rotation, { duration: 2, z: 3, delay: 6, repeat:2});
 
 gsap.to(coneGroup.children[1].rotation, { duration: 2, x: -6});
 gsap.to(coneGroup.children[1].rotation, { duration: 2, y: -6, delay: 3});
-gsap.to(coneGroup.children[1].rotation, { duration: 2, z: -6, delay: 6});
+gsap.to(coneGroup.children[1].rotation, { duration: 2, z: -6, delay: 6, repeat: -1});
