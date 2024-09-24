@@ -21,7 +21,7 @@ camera.position.z = 100;
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize( window.innerWidth/2, window.innerHeight/2 );
 document.body.appendChild(renderer.domElement);
-
+renderer.domElement.classList.add("smallArea");
 //* rendering a cube
 const geometry = new THREE.BoxGeometry(1,1,1);
 //*a basic mesh material will not be affected by lighting
